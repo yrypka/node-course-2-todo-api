@@ -9,9 +9,9 @@ const app = express()
 
 app.use(bodyParser.json())
 
-app.post('/todos', async (req, res) => {
+app.post('/todos', (req, res) => {
   const todo = new Todo({ text: req.body.text })
-  const result = await todo
+  todo
     .save()
     .then(doc => {
       res.send(doc)
@@ -24,3 +24,5 @@ app.post('/todos', async (req, res) => {
 app.listen(process.env.PORT || 3000, () =>
   console.log('Todo Api server started on localhost:3000')
 )
+
+module.exports = { app }
