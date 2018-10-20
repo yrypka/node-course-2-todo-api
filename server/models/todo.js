@@ -1,5 +1,5 @@
 // const mongoose = require('mongoose')
-const { mongoose } = require('./db/mongoose')
+const { mongoose } = require('../db/mongoose')
 
 const Todo = mongoose.model('Todo', {
   text: {
