@@ -51,8 +51,9 @@ app.get('/todos/:id', (req, res) => {
     })
 })
 
-app.listen(process.env.PORT || 3000, () =>
-  console.log('Todo Api server started on localhost:3000')
+const port = process.env.PORT || 3000
+app.listen(port, () =>
+  console.log(`Todo Api server started on port ${port}`)
 )
 
 module.exports = { app }
